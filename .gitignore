@@ -127,4 +127,5 @@ dist
 .pnp.*
 
 # folder ressources
-ressources/
+config.json
+apiboc-be989-firebase-adminsdk-5z6rc-e1705788be.json
