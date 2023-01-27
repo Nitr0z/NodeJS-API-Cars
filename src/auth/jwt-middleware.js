@@ -1,14 +1,8 @@
-// -- Importing jwt package
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); // -- Importing jwt package
+const config = require('../../ressources/json/config.json'); // -- Importing json configuration
+const JWT_SECRET = config.jwtSecret; // -- Get jwt secret from json config file
 
-// -- Importing json configuration
-const config = require('../../ressources/json/config.json');
-
-// -- Get jwt secret from json config file
-const JWT_SECRET = config.jwtSecret;
-
-// -- Extract jwt token from header
-const extractBearerToken = headerValue => {
+const extractBearerToken = headerValue => { // -- Extract jwt token from header
     if (typeof headerValue !== 'string') {
         return false
     }

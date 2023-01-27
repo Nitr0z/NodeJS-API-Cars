@@ -1,14 +1,9 @@
 const firestore = require('../config/firebase-config');
-
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 const jwt = require('jsonwebtoken');
-
 const jsonConfig = require('../../ressources/json/config.json');
-
 const JWT_SECRET = jsonConfig.jwtSecret;
-
 const jwtMiddleware = require('./jwt-middleware');
 
 exports.register = async (req, res) => {
