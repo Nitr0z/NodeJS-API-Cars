@@ -28,5 +28,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 require('./api-endpoints')(app)
 
 app.listen(port, () => {
-    console.log("Server started and listening on port"+port);
+    console.log("Server started and listening on port "+port);
 });
