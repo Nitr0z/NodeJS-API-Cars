@@ -1,14 +1,3 @@
-
-  
-(Production Server 🎛️) Project Install
-$ dump your localfile
-$ on ssh, run : npm i pm2
-$ cd src
-$ pm2 start app.js
-$ pm2 save
-
-
-
 # Cars API 🦾
 
 Our car API provides comprehensive information about various vehicles, including make, model, year, specifications, and more. With this API, you can easily search for any car, compare different models, and access accurate technical data to help with your research or project. Whether you're a car enthusiast, researcher, or developer, our API is designed to be a one-stop solution for all your car-related needs. Start exploring the world of cars today with our powerful and user-friendly API.
