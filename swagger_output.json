@@ -150,6 +150,117 @@
           }
         ]
       }
+    },
+    "/cars/add": {
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to register a new car",
+        "description": "Service to register a new car",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "car": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cars/update": {
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to update a car",
+        "description": "Service to update a car",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "car": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cars/delete": {
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to delete a car",
+        "description": "Service to delete a car",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cars/get": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to get a car",
+        "description": "Service to get a car",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
     }
   }
 }
