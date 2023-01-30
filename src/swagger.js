@@ -5,9 +5,9 @@ const apiEndpointsFiles = ['src/api-endpoints.js']
 
 const doc = {
     info: {
-        version: "3.0.0",
+        version: "1.0.1",
         title: "Cars API documentation",
-        description: "Documentation of Cars API",
+        description: "Our car API provides comprehensive information about various vehicles, including make, model, year, specifications, and more. With this API, you can easily search for any car, compare different models, and access accurate technical data to help with your research or project. Whether you're a car enthusiast, researcher, or developer, our API is designed to be a one-stop solution for all your car-related needs. Start exploring the world of cars today with our powerful and user-friendly API.",
         termsOfService: "http://swagger.io/terms/",
         contact: {
             email: "contact@cars-api.com"
