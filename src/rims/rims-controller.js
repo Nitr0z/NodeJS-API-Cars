@@ -8,12 +8,13 @@ exports.addRim = async (req, res) => {
                 "Bearer": []
     }]*/
     const {
-        model, brand, year, price, description
+        model, brand, year, size, price, description
     } = req.body;
     firestore.collection('rims').add({
         "model": model,
         "brand": brand,
         "year": year,
+        "size": size,
         "price": price,
         "description": description
     }).then((docRef) => {
@@ -32,7 +33,7 @@ exports.updateRim = async (req, res) => {
             "Bearer": []
     }]*/
     const {
-        model, brand, year, price, description
+        model, brand, year, size, price, description
     } = req.body;
     const { id } = req.params;
     try {
@@ -42,6 +43,7 @@ exports.updateRim = async (req, res) => {
                 "model": model,
                 "brand": brand,
                 "year": year,
+                "size": size,
                 "price": price,
                 "description": description
             });

@@ -26,6 +26,7 @@ require("./colors/colors-routes")(app);
 require("./garages/garages-routes")(app);
 require("./options/options-routes")(app);
 require("./rims/rims-routes")(app);
+require("./consumers/consumers-routes")(app);
 
 // -- Setup swagger in our doc with uri /doc
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))

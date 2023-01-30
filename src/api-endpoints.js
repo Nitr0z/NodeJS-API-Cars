@@ -5,4 +5,5 @@ module.exports = function (app) {
     require("./garages/garages-routes")(app);
     require("./options/options-routes")(app);
     require("./rims/rims-routes")(app);
+    require("./consumers/consumers-routes")(app);
 }

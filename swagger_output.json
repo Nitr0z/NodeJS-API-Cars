@@ -1133,6 +1133,9 @@
                 "year": {
                   "example": "any"
                 },
+                "size": {
+                  "example": "any"
+                },
                 "price": {
                   "example": "any"
                 },
@@ -1193,6 +1196,9 @@
                   "example": "any"
                 },
                 "year": {
+                  "example": "any"
+                },
+                "size": {
                   "example": "any"
                 },
                 "price": {
@@ -1328,6 +1334,252 @@
         ],
         "summary": "Service to get all rims",
         "description": "Service to get all rims",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/consumers/add": {
+      "post": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to register a new consumer",
+        "description": "Service to register a new consumer",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "zipCode": {
+                  "example": "any"
+                },
+                "country": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/consumers/update/{id}": {
+      "put": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to update a consumer",
+        "description": "Service to update a consumer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "zipCode": {
+                  "example": "any"
+                },
+                "country": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/consumers/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to delete a consumer",
+        "description": "Service to delete a consumer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/consumers/delete": {
+      "delete": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to delete all consumers",
+        "description": "Service to delete all consumers",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/consumers/get/{id}": {
+      "get": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to get a consumer",
+        "description": "Service to get a consumer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/consumers/get": {
+      "get": {
+        "tags": [
+          "Consumers"
+        ],
+        "summary": "Service to get all consumers",
+        "description": "Service to get all consumers",
         "parameters": [],
         "responses": {
           "200": {
