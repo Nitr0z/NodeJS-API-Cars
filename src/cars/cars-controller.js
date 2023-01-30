@@ -70,25 +70,6 @@ exports.deleteCar = async (req, res) => {
     }
 }
 
-exports.deleteAllCar = async (req, res) => {
-    //#swagger.tags = ['Cars']
-    //#swagger.description = 'Service to delete all cars'
-    //#swagger.summary = 'Service to delete all cars'
-    /*#swagger.security = [{
-            "Bearer": []
-    }]*/
-    try {
-        const carsRef = await firestore.collection('cars').get();
-        const cars = carsRef.docs.map(doc => doc.data());
-        cars.forEach(async car => {
-            await firestore.collection('cars').doc(car.id).delete();
-        });
-        res.status(200).send({ message: 'All cars deleted' });
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-}
-
 exports.getCar = async (req, res) => {
     //#swagger.tags = ['Cars']
     //#swagger.description = 'Service to get a car'

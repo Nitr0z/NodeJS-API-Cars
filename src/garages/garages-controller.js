@@ -77,25 +77,6 @@ exports.deleteGarage = async (req, res) => {
     }
 }
 
-exports.deleteAllGarage = async (req, res) => {
-    //#swagger.tags = ['Garages']
-    //#swagger.description = 'Service to delete all garages'
-    //#swagger.summary = 'Service to delete all garages'
-    /*#swagger.security = [{
-        "Bearer": []
-    }]*/
-    try {
-        const garagesRef = await firestore.collection('garages').get();
-        const garages = garagesRef.docs.map(doc => doc.data());
-        garages.forEach(async car => {
-            await firestore.collection('garages').doc(car.id).delete();
-        });
-        res.status(200).send({ message: 'All garages deleted' });
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-}
-
 exports.getGarage = async (req, res) => {
     //#swagger.tags = ['Garages']
     //#swagger.description = 'Service to get a garage'

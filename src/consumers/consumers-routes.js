@@ -9,8 +9,6 @@ module.exports = app => {
 
     router.delete("/consumers/delete/:id", jwtMiddleware.checkJwtTokenMiddleware, consumers.deleteConsumer); // path to delete a consumer
 
-    router.delete("/consumers/delete", jwtMiddleware.checkJwtTokenMiddleware, consumers.deleteAllConsumer); // path to delete all consumer
-
     router.get("/consumers/get/:id", consumers.getConsumer); // path to get a consumer
 
     router.get("/consumers/get", consumers.getAllConsumer); // path to get all consumers

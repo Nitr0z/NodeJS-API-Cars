@@ -5,24 +5,13 @@
     "title": "Cars API documentation",
     "description": "Our car API provides comprehensive information about various vehicles, including make, model, year, specifications, and more. With this API, you can easily search for any car, compare different models, and access accurate technical data to help with your research or project. Whether you're a car enthusiast, researcher, or developer, our API is designed to be a one-stop solution for all your car-related needs. Start exploring the world of cars today with our powerful and user-friendly API.",
     "termsOfService": "http://swagger.io/terms/",
-    "author": "Théo Potier",
     "contact": {
       "email": "contact@cars-api.com"
     },
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    },
-    "tags": [
-      {
-        "name": "Auth",
-        "description": "Everything about your Pets",
-        "externalDocs": {
-          "description": "Find out more",
-          "url": "http://swagger.io"
-        }
-      }
-    ]
+    }
   },
   "host": "localhost:8080/v1",
   "servers": [
@@ -297,38 +286,6 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/cars/delete": {
-      "delete": {
-        "tags": [
-          "Cars"
-        ],
-        "summary": "Service to delete all cars",
-        "description": "Service to delete all cars",
-        "parameters": [
           {
             "name": "authorization",
             "in": "header",
@@ -783,38 +740,6 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/garages/delete": {
-      "delete": {
-        "tags": [
-          "Garages"
-        ],
-        "summary": "Service to delete all garages",
-        "description": "Service to delete all garages",
-        "parameters": [
           {
             "name": "authorization",
             "in": "header",
@@ -1503,38 +1428,6 @@
             "required": true,
             "type": "string"
           },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/consumers/delete": {
-      "delete": {
-        "tags": [
-          "Consumers"
-        ],
-        "summary": "Service to delete all consumers",
-        "description": "Service to delete all consumers",
-        "parameters": [
           {
             "name": "authorization",
             "in": "header",

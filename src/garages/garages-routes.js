@@ -9,8 +9,6 @@ module.exports = app => {
 
     router.delete("/garages/delete/:id", jwtMiddleware.checkJwtTokenMiddleware, garages.deleteGarage); // path to delete a garage
 
-    router.delete("/garages/delete", jwtMiddleware.checkJwtTokenMiddleware, garages.deleteAllGarage); // path to delete all garage
-
     router.get("/garages/get/:id", garages.getGarage); // path to get a garage
 
     router.get("/garages/get", garages.getAllGarage); // path to get all garages

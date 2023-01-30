@@ -74,25 +74,6 @@ exports.deleteConsumer = async (req, res) => {
     }
 }
 
-exports.deleteAllConsumer = async (req, res) => {
-    //#swagger.tags = ['Consumers']
-    //#swagger.description = 'Service to delete all consumers'
-    //#swagger.summary = 'Service to delete all consumers'
-    /*#swagger.security = [{
-            "Bearer": []
-    }]*/
-    try {
-        const consumersRef = await firestore.collection('consumers').get();
-        const consumers = consumersRef.docs.map(doc => doc.data());
-        consumers.forEach(async consumer => {
-            await firestore.collection('consumers').doc(consumer.id).delete();
-        });
-        res.status(200).send({ message: 'All consumers deleted' });
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-}
-
 exports.getConsumer = async (req, res) => {
     //#swagger.tags = ['Consumers']
     //#swagger.description = 'Service to get a consumer'
