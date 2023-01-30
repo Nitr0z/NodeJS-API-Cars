@@ -11,9 +11,9 @@ module.exports = app => {
 
     router.delete("/cars/delete", jwtMiddleware.checkJwtTokenMiddleware, cars.deleteAllCar); // path to delete all car
 
-    router.get("/cars/get/:id", jwtMiddleware.checkJwtTokenMiddleware, cars.getCar); // path to get a car
+    router.get("/cars/get/:id", cars.getCar); // path to get a car
 
-    router.get("/cars/get", jwtMiddleware.checkJwtTokenMiddleware, cars.getAllCar); // path to get all cars
+    router.get("/cars/get", cars.getAllCar); // path to get all cars
 
     // -- To declare the prefix path of your API service
     app.use("/v1", router);

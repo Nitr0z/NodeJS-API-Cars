@@ -4,6 +4,9 @@ exports.addColor = async (req, res) => {
     //#swagger.tags = ['Colors']
     //#swagger.description = 'Service to register a new color'
     //#swagger.summary = 'Service to register a new color'
+    /*#swagger.security = [{
+            "Bearer": []
+    }]*/
     const {
         brand, year, name, hex, description
     } = req.body;
@@ -15,7 +18,7 @@ exports.addColor = async (req, res) => {
         "hex": hex,
         "description": description
     }).then((docRef) => {
-        res.status(200).send({"Ajout reussi ! Id de la couleur :" :docRef.id });
+        res.status(200).send({"Successful addition! Color id :" :docRef.id });
     }).catch((error) => {
         res.status(400).send(error.message);
     }
@@ -26,6 +29,9 @@ exports.updateColor = async (req, res) => {
     //#swagger.tags = ['Colors']
     //#swagger.description = 'Service to update a color'
     //#swagger.summary = 'Service to update a color'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     const {
         brand, year, name, hex, description
     } = req.body;
@@ -40,7 +46,7 @@ exports.updateColor = async (req, res) => {
                 "hex": hex,
                 "description": description
             });
-            res.status(200).send({"Mise à jour de l'id :" :id +"reussite"});
+            res.status(200).send({"Update of the id :" :id +"successful"});
         } else {
             res.status(404).send({ message: 'Color not found' });
         }
@@ -53,10 +59,13 @@ exports.deleteColor = async (req, res) => {
     //#swagger.tags = ['Colors']
     //#swagger.description = 'Service to delete a color'
     //#swagger.summary = 'Service to delete a color'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     try {
         const { id } = req.params;
         const carRef = await firestore.collection('colors').doc(id).delete();
-        res.status(200).send({"Supression de l'id :" :id +"reussite"});
+        res.status(200).send({"Suppression of the id :" :id +"successful"});
     } catch (error) {
         res.status(400).send(error.message);
     }
@@ -66,6 +75,9 @@ exports.deleteAllColor = async (req, res) => {
     //#swagger.tags = ['Colors']
     //#swagger.description = 'Service to delete all colors'
     //#swagger.summary = 'Service to delete all colors'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     try {
         const colorsRef = await firestore.collection('colors').get();
         const colors = colorsRef.docs.map(doc => doc.data());

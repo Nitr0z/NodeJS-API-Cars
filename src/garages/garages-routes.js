@@ -11,9 +11,9 @@ module.exports = app => {
 
     router.delete("/garages/delete", jwtMiddleware.checkJwtTokenMiddleware, garages.deleteAllGarage); // path to delete all garage
 
-    router.get("/garages/get/:id", jwtMiddleware.checkJwtTokenMiddleware, garages.getGarage); // path to get a garage
+    router.get("/garages/get/:id", garages.getGarage); // path to get a garage
 
-    router.get("/garages/get", jwtMiddleware.checkJwtTokenMiddleware, garages.getAllGarage); // path to get all garages
+    router.get("/garages/get", garages.getAllGarage); // path to get all garages
 
     // -- To declare the prefix path of your API service
     app.use("/v1", router);

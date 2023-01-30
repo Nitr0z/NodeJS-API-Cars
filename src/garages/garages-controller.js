@@ -4,6 +4,9 @@ exports.addGarage = async (req, res) => {
     //#swagger.tags = ['Garages']
     //#swagger.description = 'Service to register a new garage'
     //#swagger.summary = 'Service to register a new garage'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     const {
         name, address, city, postalCode, phone, email, website, description
     } = req.body;
@@ -18,7 +21,7 @@ exports.addGarage = async (req, res) => {
         "website": website,
         "description": description
     }).then((docRef) => {
-        res.status(200).send({"Ajout reussi ! Id du garage :" :docRef.id });
+        res.status(200).send({"Successful addition! Garage id :" :docRef.id });
     }).catch((error) => {
         res.status(400).send(error.message);
     }
@@ -29,6 +32,9 @@ exports.updateGarage = async (req, res) => {
     //#swagger.tags = ['Garages']
     //#swagger.description = 'Service to update a garage'
     //#swagger.summary = 'Service to update a garage'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     const {
         name, address, city, postalCode, phone, email, website, description
     } = req.body;
@@ -46,7 +52,7 @@ exports.updateGarage = async (req, res) => {
                 "website": website,
                 "description": description
             });
-            res.status(200).send({"Mise à jour de l'id :" :id +"reussite"});
+            res.status(200).send({"Update of the id :" :id +"successful"});
         } else {
             res.status(404).send({ message: 'Garage not found' });
         }
@@ -59,10 +65,13 @@ exports.deleteGarage = async (req, res) => {
     //#swagger.tags = ['Garages']
     //#swagger.description = 'Service to delete a garage'
     //#swagger.summary = 'Service to delete a garage'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     try {
         const { id } = req.params;
         const carRef = await firestore.collection('garages').doc(id).delete();
-        res.status(200).send({"Supression de l'id :" :id +"reussite"});
+        res.status(200).send({"Suppression of the id :" :id +"successful"});
     } catch (error) {
         res.status(400).send(error.message);
     }
@@ -72,6 +81,9 @@ exports.deleteAllGarage = async (req, res) => {
     //#swagger.tags = ['Garages']
     //#swagger.description = 'Service to delete all garages'
     //#swagger.summary = 'Service to delete all garages'
+    /*#swagger.security = [{
+        "Bearer": []
+    }]*/
     try {
         const garagesRef = await firestore.collection('garages').get();
         const garages = garagesRef.docs.map(doc => doc.data());
@@ -109,4 +121,4 @@ exports.getAllGarage = async (req, res) => {
     } catch (error) {
         res.status(400).send(error.message);
     }
-}
+} 
