@@ -2,13 +2,17 @@ module.exports = app => {
     const cars = require('./cars-controller');
     const router = require('express').Router();
 
-    router.post("/cars/add", cars.addCar);
+    router.post("/cars/add", cars.addCar); // path to add a car
 
-    router.post("/cars/update", cars.updateCar);
+    router.put("/cars/update/:id", cars.updateCar); // path to update a car
 
-    router.post("/cars/delete", cars.deleteCar);
+    router.delete("/cars/delete/:id", cars.deleteCar); // path to delete a car
 
-    router.get("/cars/get", cars.getCar);
+    router.delete("/cars/delete", cars.deleteAllCar); // path to delete all car
+
+    router.get("/cars/get/:id", cars.getCar); // path to get a car
+
+    router.get("/cars/get", cars.getAllCar); // path to get all cars
 
     // -- To declare the prefix path of your API service
     app.use("/v1", router);

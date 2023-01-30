@@ -165,7 +165,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "car": {
+                "model": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
@@ -182,8 +194,8 @@
         }
       }
     },
-    "/cars/update": {
-      "post": {
+    "/cars/update/{id}": {
+      "put": {
         "tags": [
           "Cars"
         ],
@@ -191,16 +203,62 @@
         "description": "Service to update a car",
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "car": {
+                "model": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/cars/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to delete a car",
+        "description": "Service to delete a car",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -214,24 +272,36 @@
       }
     },
     "/cars/delete": {
-      "post": {
+      "delete": {
         "tags": [
           "Cars"
         ],
-        "summary": "Service to delete a car",
-        "description": "Service to delete a car",
+        "summary": "Service to delete all cars",
+        "description": "Service to delete all cars",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cars/get/{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Service to get a car",
+        "description": "Service to get a car",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -249,8 +319,388 @@
         "tags": [
           "Cars"
         ],
-        "summary": "Service to get a car",
-        "description": "Service to get a car",
+        "summary": "Service to get all cars",
+        "description": "Service to get all cars",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/colors/add": {
+      "post": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to register a new color",
+        "description": "Service to register a new color",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "brand": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "hex": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/colors/update/{id}": {
+      "put": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to update a color",
+        "description": "Service to update a color",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "brand": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "hex": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/colors/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to delete a color",
+        "description": "Service to delete a color",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/colors/delete": {
+      "delete": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to delete all colors",
+        "description": "Service to delete all colors",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/colors/get/{id}": {
+      "get": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to get a color",
+        "description": "Service to get a color",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/colors/get": {
+      "get": {
+        "tags": [
+          "Colors"
+        ],
+        "summary": "Service to get all colors",
+        "description": "Service to get all colors",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/garages/add": {
+      "post": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to register a new garage",
+        "description": "Service to register a new garage",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "postalCode": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "website": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/garages/update/{id}": {
+      "put": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to update a garage",
+        "description": "Service to update a garage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "postalCode": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "website": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/garages/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to delete a garage",
+        "description": "Service to delete a garage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/garages/delete": {
+      "delete": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to delete all garages",
+        "description": "Service to delete all garages",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/garages/get/{id}": {
+      "get": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to get a garage",
+        "description": "Service to get a garage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/garages/get": {
+      "get": {
+        "tags": [
+          "Garages"
+        ],
+        "summary": "Service to get all garages",
+        "description": "Service to get all garages",
         "parameters": [],
         "responses": {
           "200": {
