@@ -7,7 +7,6 @@ exports.addCar = async (req, res) => {
     const {
         model, brand, year, price, description
     } = req.body;
-
     firestore.collection('cars').add({
         "model": model,
         "brand": brand,
