@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 });
 
 require("./auth/auth-routes")(app);
+require("./cars/cars-routes")(app);
 
 // -- Setup swagger in our doc with uri /doc
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))

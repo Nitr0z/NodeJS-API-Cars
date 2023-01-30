@@ -1,7 +1,6 @@
 module.exports = app => {
-    const auth = require('./cars-controller');
+    const cars = require('./cars-controller');
     const router = require('express').Router();
-    const jwtMiddleware = require('./jwt-middleware');
 
     router.post("/cars/add", cars.addCar);
 
