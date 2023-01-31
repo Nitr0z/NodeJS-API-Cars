@@ -19,10 +19,10 @@ const doc = {
     },
     servers: [
         { 
-            url: "http://localhost:8080/v1/" 
+            url: "https://toolbox-api.elearningtouch.info/v1/" 
         }
     ],
-    host: "localhost:8080/v1",
+    host: "toolbox-api.elearningtouch.info/v1",
     basePath: "/",
     consumes: ['application/json'],
     produces: ['application/json'],

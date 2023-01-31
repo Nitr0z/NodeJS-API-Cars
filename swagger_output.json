@@ -13,10 +13,10 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "localhost:8080/v1",
+  "host": "toolbox-api.elearningtouch.info/v1",
   "servers": [
     {
-      "url": "http://localhost:8080/v1/"
+      "url": "https://toolbox-api.elearningtouch.info/v1/"
     }
   ],
   "basePath": "/",

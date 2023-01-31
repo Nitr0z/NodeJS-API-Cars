@@ -5,11 +5,11 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js",
+    "start": "node src/app.js",
     "swagger-autogen": "node src/swagger.js"
   },
   "keywords": [],
-  "author": "Soumaila Abdoulaye DIARRA",
+  "author": "Théo Potier",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/firestore": "^6.4.1",
