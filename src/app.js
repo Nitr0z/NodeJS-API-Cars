@@ -5,7 +5,7 @@ const helmet = require('helmet'); // -- To secure our api against common vulnera
 const morgan = require('morgan'); // -- To log our express rest api 
 const swaggerUi = require('swagger-ui-express'); // -- Importing swagger dependency and swagger json file generated
 const swaggerFile = require('../swagger_output.json');
-let port = process.env.PORT || 8080 ;
+let port = process.env.PORT || 8080;
 
 const app = express();
 

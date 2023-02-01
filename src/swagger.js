@@ -1,8 +1,5 @@
 const swaggerAutogen = require('swagger-autogen')()
 
-const outputFile = './swagger_output.json'
-const apiEndpointsFiles = ['src/api-endpoints.js']
-
 const doc = {
     info: {
         version: "1.0.1",
@@ -19,10 +16,10 @@ const doc = {
     },
     servers: [
         { 
-            url: "https://toolbox-api.elearningtouch.info/v1/" 
+            url: "http://15.188.114.51:8080/v1/" 
         }
     ],
-    host: "toolbox-api.elearningtouch.info/v1",
+    host: "15.188.114.51:8080/v1",
     basePath: "/",
     consumes: ['application/json'],
     produces: ['application/json'],
@@ -36,6 +33,9 @@ const doc = {
         }
     },
 }
+
+const outputFile = './swagger_output.json'
+const apiEndpointsFiles = ['src/api-endpoints.js']
 
 swaggerAutogen(outputFile, apiEndpointsFiles, doc).then(() => {
     // -- For auto generating swagger_output.json file
