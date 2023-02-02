@@ -10,7 +10,11 @@ http://15.188.114.51:8080/api-docs/
 
 __Exemple :__
 
-![image](https://user-images.githubusercontent.com/48621976/215516860-4d504d65-2c87-4655-b15a-548650636236.png)
+![api1](https://user-images.githubusercontent.com/48621976/216278119-06bffb0d-6abd-4471-8492-be3dac34309a.png)
+![api2](https://user-images.githubusercontent.com/48621976/216278168-49767883-b21d-4cf4-97e4-2509f1278763.png)
+![api3](https://user-images.githubusercontent.com/48621976/216278194-ac65c40e-52da-4794-93fd-52921061d961.png)
+![api4](https://user-images.githubusercontent.com/48621976/216278209-e63378bf-dcd8-4b08-8a92-85c9dd870ad5.png)
+
 
 
 __Tutorial :__
