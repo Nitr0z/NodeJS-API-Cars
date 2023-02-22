@@ -5,22 +5,25 @@ const doc = {
         version: "1.0.1",
         title: "Cars API documentation",
         description: "Our car API provides comprehensive information about various vehicles, including make, model, year, specifications, and more. With this API, you can easily search for any car, compare different models, and access accurate technical data to help with your research or project. Whether you're a car enthusiast, researcher, or developer, our API is designed to be a one-stop solution for all your car-related needs. Start exploring the world of cars today with our powerful and user-friendly API.",
-        termsOfService: "http://swagger.io/terms/",
+        termsOfService: "https://swagger.io/terms/",
         contact: {
             email: "contact@cars-api.com"
         },
         license: {
             name: "Apache 2.0",
-            url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+            url: "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
     },
     servers: [
         { 
-            url: "http://15.188.114.51:8080/v1/" 
+            url: "https://nodejsapicars.onrender.com/v1/" 
         }
     ],
-    host: "15.188.114.51:8080/v1",
+    host: "nodejsapicars.onrender.com",
     basePath: "/",
+    schemes: [
+      "http", "https"
+    ],
     consumes: ['application/json'],
     produces: ['application/json'],
     securityDefinitions: {
