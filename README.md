@@ -6,7 +6,7 @@ Working on Ubuntu with nodeJS 18.
 
 __Web access :__
 
-http://15.188.114.51:8080/api-docs/
+//
 
 __Exemple :__
 
